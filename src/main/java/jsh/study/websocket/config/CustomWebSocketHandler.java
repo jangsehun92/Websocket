@@ -17,6 +17,7 @@ public class CustomWebSocketHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         CLIENTS.put(session.getId(), session);
+        System.out.println(CLIENTS);
     }
 
     @Override
@@ -26,15 +27,11 @@ public class CustomWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        String id = session.getId();
-        System.out.println(message);
         CLIENTS.entrySet().forEach(client -> {
-            if(!client.getKey().equals(id)) {
-                try {
-                    client.getValue().sendMessage(message);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            try {
+                client.getValue().sendMessage(message);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }
