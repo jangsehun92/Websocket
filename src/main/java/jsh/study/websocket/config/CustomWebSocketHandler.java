@@ -17,7 +17,6 @@ public class CustomWebSocketHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         CLIENTS.put(session.getId(), session);
-        System.out.println(CLIENTS);
     }
 
     @Override
@@ -27,6 +26,7 @@ public class CustomWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+
         CLIENTS.entrySet().forEach(client -> {
             try {
                 client.getValue().sendMessage(message);

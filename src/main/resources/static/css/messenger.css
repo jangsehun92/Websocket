@@ -4,6 +4,7 @@
     height: 700px;
     max-height: 700px;
     display:block;
+    overflow:scroll;
     border: 1px solid black;
 }
 

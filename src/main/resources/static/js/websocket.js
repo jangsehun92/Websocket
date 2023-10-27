@@ -1,10 +1,9 @@
-let socket;
+let socket = new WebSocket("ws://localhost:8080/connect", ["jsh-protocol-3", "jsh-protocol-2"]);
 
-window.addEventListener('DOMContentLoaded', function() {
-	connectWebsocket();
+socket.addEventListener('open', function (event) {
+  console.log("Subprotocol in use: " + socket.protocol);
 });
 
-function connectWebsocket() {
-    socket = new WebSocket("ws://localhost:8080/connect");
-    console.log(socket);
-}
+socket.addEventListener('error', function (event) {
+  console.error("WebSocket error observed:", event);
+});
