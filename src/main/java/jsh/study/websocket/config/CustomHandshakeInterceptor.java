@@ -14,7 +14,8 @@ public class CustomHandshakeInterceptor implements HandshakeInterceptor {
     final static List<String> SUPPORT_SUB_PROTOCOLS = Arrays.asList("jsh-protocol-1", "jsh-protocol-2");
 
     @Override
-    public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
+    public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
+                                   Map<String, Object> attributes) throws Exception {
         // 서브프로토콜 확인
         String requestSubProtocols = request.getHeaders().getFirst("Sec-WebSocket-Protocol");
 
@@ -32,7 +33,8 @@ public class CustomHandshakeInterceptor implements HandshakeInterceptor {
     }
 
     @Override
-    public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Exception exception) {
+    public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
+                               Exception exception) {
 
     }
 

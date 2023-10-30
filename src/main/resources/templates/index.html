@@ -7,19 +7,14 @@
     <link rel="stylesheet" media="screen" href="/css/messenger.css"/>
 </head>
 <body>
-<!-- Messenger UI 만들기 -->
-
-<div>
-    <div class="chat-room">
-        <div class="left-message">
-<p>aa</p>
-        </div>
-
-        <div class="right-message">
-<p>bb</p>
-        </div>
-
-    </div>
+<div class="messenger-header">
+    nickname : <input type="text" size="10">
+    message : <input type="text" size="50" onkeyup="if(window.event.keyCode==13){send()}"><input type="button" onclick="send()" value="전송">
 </div>
+<div class="messenger-body">
+    <p> test message </p>
+</div>
+
+
 </body>
 </html>
