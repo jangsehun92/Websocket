@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class CustomWebSocketHandler extends TextWebSocketHandler {
 
-    private static final ConcurrentHashMap<String, WebSocketSession> CLIENTS = new ConcurrentHashMap<>();
+     private static final ConcurrentHashMap<String, WebSocketSession> CLIENTS = new ConcurrentHashMap<>();
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -34,4 +34,5 @@ public class CustomWebSocketHandler extends TextWebSocketHandler {
             }
         });
     }
+
 }

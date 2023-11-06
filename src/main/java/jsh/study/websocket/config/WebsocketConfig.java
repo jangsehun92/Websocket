@@ -21,3 +21,4 @@ public class WebsocketConfig implements WebSocketConfigurer {
     }
 
 }
+
