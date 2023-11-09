@@ -6,7 +6,7 @@ socket.addEventListener('open', function (event) {
 
 socket.addEventListener('error', function (event) {
   console.error("WebSocket error observed:", event);
-});
+});ㅁ
 
 function send() {
     console.log("test");
